@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/public'))
 app.set('view engine', 'ejs');
 
 app.get('/widget/:id', function(request, response){
-  var text = 'http://localhost:3000/' + request.params.id
+  var text = 'http://localhost:3000gi/' + request.params.id
   sendText(text);
   response.render('widget');
   console.log(request.query);
