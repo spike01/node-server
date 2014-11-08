@@ -8,6 +8,7 @@ var expressLayouts = require('express-ejs-layouts')
 
 var port = process.env.PORT || 3000;
 var id
+var name = {customer: null, owner: null}
 
 app.use(expressLayouts)
 app.use(express.static(__dirname + '/public'))
@@ -18,12 +19,12 @@ app.get('/widget/:id', function(request, response){
   response.render('widget');
   console.log(request.query);
   console.log(request.params)
-  id = request.params;
+  name.customer = request.query.name;
+  id = request.params.id;
 });
 
 app.get('/welcome', function(request, response){
   response.render('welcome');
-  console.log(request.query);
 });
 
 
@@ -40,7 +41,7 @@ io.on('connection', function(socket){
 
   socket.on('message', function(message){
    console.log(id)
-    io.emit('message', {message: "message", id: id });
+    io.emit('message', {name: name.customer, message: message});
   });
 
   socket.on('isTyping', function(message){

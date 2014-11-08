@@ -1,12 +1,18 @@
+<header>
+  <h3>Chat</h3>
+  <img src="/images/x.png" id="x" alt="x">
+</header>
+
 <main class="message_body">
-<ul id="messages"></ul>
+<section id="messages"></section>
 </main>
 
 <footer>
-  <form action="" id="input-field">
-    <input id="chatmessage">
-    <button id="button">Send</button>
-  </form>
+  <div id="typing"></div>
+<form action="" id="input_field">
+  <input id="chatmessage" placeholder="Type something here">
+  <button id="button">Send</button>
+</form>
 </footer>
 
 <script src='/socket.io/socket.io.js'></script>
