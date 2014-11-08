@@ -21,9 +21,14 @@ app.get('/widget/:id', function(request, response){
   id = request.params;
 });
 
+app.get('/home', function(request, response){
+   response.render('home');
+   console.log('GET home');
+})
+
 app.get('/welcome', function(request, response){
   response.render('welcome');
-  console.log(request.query);
+  console.log('GET welcome');
 });
 
 

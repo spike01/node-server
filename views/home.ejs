@@ -1,0 +1,10 @@
+<button id="start-chat">Chat with us</button>
+
+<script>
+     $('#start-chat').on('click', function(e) {
+         e.preventDefault();
+         Wix.Activities.getUserSessionToken(function(value) {  
+            window.open('/welcome',"_self")
+         });
+      });
+</script>
