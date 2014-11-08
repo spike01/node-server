@@ -22,7 +22,9 @@
   "homepage": "https://github.com/spike01/wix-sock",
   "dependencies": {
     "ejs": "^1.0.0",
+    "ejs-layouts": "0.0.1",
     "express": "^4.10.1",
+    "express-ejs-layouts": "^1.1.0",
     "socket.io": "^1.2.0"
   }
 }
