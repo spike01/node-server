@@ -1,0 +1,17 @@
+  <form action="" id="input_field">
+    <input id="name">
+    <button id="submit-name">Submit</button>
+  </form>
+
+  <script src='http://code.jquery.com/jquery-1.11.1.js'></script>
+  <script>
+        $('#submit-name').on('click', function(e) {
+            e.preventDefault();
+            var name = $("#name").val()
+            console.log("hello");
+            Wix.Activities.getUserSessionToken(function(value) {  
+               var chat_url = '/widget/' + value + '?name=' + name
+               window.open(chat_url ,"_self")
+            });
+         });
+  </script>
