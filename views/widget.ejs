@@ -1,1 +1,37 @@
-Hello world
+<main class="message_body">
+<ul id="messages"></ul>
+</main>
+
+<footer>
+  <form action="" id="input_field">
+    <input id="m">
+    <button id="button">Send</button>
+  </form>
+</footer>
+
+<script src='/socket.io/socket.io.js'></script>
+<script src='http://code.jquery.com/jquery-1.11.1.js'></script>
+<script>
+
+var socket = io(); 
+
+$(document).ready(function(){ 
+
+  $('form').submit(function(){
+    socket.emit('message', $('#m').val());
+    scrollDown(window);
+    $('#m').val('');
+    return false;
+  });
+
+  function scrollDown(element) {
+    $(element).scrollTop($(element).height());
+  };
+
+  socket.on('message', function(msg){
+    $('#messages').append($('<li>').text(msg));
+  });
+
+});
+
+</script>
