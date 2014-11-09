@@ -1,14 +1,27 @@
 <style wix-style>
 #start-chat {
-  background-color: {{style.bgColor}}
+   background-color: {{style.bgColor #CCCCCA}};
+   transition: background-color 0.7s ease;
+   border: none;
+   position: absolute;
+   right: 0px;
+   bottom: 25px;
+   height: 3em;
+   width: 80px;
+   border-radius: 10px 0px 0px 10px;
+   text-align: left;
 }
+
+#start-chat:hover, #start-chat:focus, #start-chat:active {
+   background-color: white;
+}
+
 body {
-  background-color: rgba(255,0,0,0.5);
-  background: none;
+   background: none;
 }
 </style>
 
-<button id="start-chat">Chat with us</button>
+<button id="start-chat">Questions?<br>Chat here!</button>
 
 <script>
      $('#start-chat').on('click', function(e) {
