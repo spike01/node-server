@@ -26,6 +26,7 @@
     "express": "^4.10.1",
     "express-ejs-layouts": "^1.1.0",
     "socket.io": "^1.2.0",
+    "string": "^2.2.0",
     "twilio": "^1.7.0"
   }
 }
