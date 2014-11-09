@@ -1,31 +1,103 @@
 <body wix-ui>
-    <header class="box">
-        <div class="logo">
-            <img width="86" src="images/wix_icon.png" alt="logo"/>
-        </div>
-        <div class="loggedOut">
-            <p>Text Support App Description</p>
-            <div class="login-panel"><!-- App login panel --></div>
-        </div>
-        <div class="loggedIn hidden">
-            App Logged in information
-            <div class="premium-panel"><!-- Premium features --></div>
-        </div>
-    </header>
+<header class="box">
+  <div class="logo">
+    <img width="86" src="images/wix_icon.png" alt="logo"/>
+  </div>
+  <div class="loggedOut">
+    <p>Text Support: stay in touch with your customers, ANYWHERE</p>
+    <div class="login-panel"><!-- App login panel --></div>
+  </div>
+  <div class="loggedIn hidden">
+    App Logged in information
+    <div class="premium-panel"><!-- Premium features --></div>
+  </div>
+</header>
 
-    <div wix-param="bgColor" wix-model="bgColorPicker" wix-ctrl="ColorPicker" wix-options="{startWithColor: 'color-3'}"></div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script src="http://sslstatic.wix.com/services/js-sdk/1.31.0/js/Wix.js"></script>
-    <script src="ui-lib.min.js"></script>
-    <script>
+<div class="acc-pane">
+  <h3>General Settings</h3>
+  <div class="acc-content">
+    <p>Notification settings</p>
+    <ul class="list">
+      <li wix-label="E-mail">
+        <div
+          wix-model="email" wix-ctrl="ButtonGroup">
+          <button value="on">On</button>
+          <button value="off">Off</button>
+      </li>
+      <li wix-label="E-mail address">
+        <div wix-model="email-address" wix-ctrl="Input" wix-options="{placeholder: 'E-mail address'}"></div>
+      </li>
+      <li wix-label="SMS">
+        <div
+          wix-model="sms" wix-ctrl="ButtonGroup">
+          <button value="on">On</button>
+          <button value="off">Off</button>
+      </li>
+        <li wix-label="Phone number">
+          <div wix-model="phone" wix-ctrl="Input" wix-options="{placeholder: 'Phone number'}"></div>
+        </li>
+        <li wix-label="Divert">
+          <div
+            wix-model="divert" wix-ctrl="ButtonGroup">
+            <button value="on">On</button>
+            <button value="off">Off</button>
+        </li>
+        <li wix-label="Sleep">
+          <div
+            wix-model="sleep" wix-ctrl="ButtonGroup">
+            <button value="on">On</button>
+            <button value="off">Off</button>
+        </li>
+        <li wix-label="Autoresponse">
+          <div
+            wix-model="autoresponse" wix-ctrl="ButtonGroup">
+            <button value="on">On</button>
+            <button value="off">Off</button>
+        </li>
+    </ul>
+          </div>
+          <!-- colour picker -->
+          <div class="acc-pane">
+            <h3>Colours: </h3>
+            <div class="acc-content">
+              <p>Button colours</p>
+              <ul class="list">
+                <li wix-label="Button colour">
+                  <div wix-param="buttonColor" wix-ctrl="ColorPickerWithOpacity" wix-options="{startWithColor: 'color-2'}"></div>
+                </li>
+                <li wix-label="Background colour">
+                  <div wix-param="bgColor" wix-ctrl="ColorPickerWithOpacity" wix-options="{startWithColor: 'color-3'}"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
 
-        Wix.UI.onChange('*', function(value, key){});
+          <!-- fonts -->
+          <div class="acc-pane">
+            <h3>Font Settings: </h3>
+            <div class="acc-content">
+              <p>Button font</p>
+              <ul class="list">
+                <li wix-label="Button font">
+                  <div wix-param="buttonFont" wix-ctrl="FontStylePicker"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
 
-    	$(document).ready(function(){
-    		Wix.UI.initialize({
-    		  bgColorPicker: true
-    		});
-    	});
-        </script>
-    </body>
+
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+          <script src="http://sslstatic.wix.com/services/js-sdk/1.31.0/js/Wix.js"></script>
+          <script src="ui-lib.min.js"></script>
+          <script>
+
+Wix.UI.onChange('*', function(value, key){});
+
+$(document).ready(function(){
+  Wix.UI.initialize({
+    bgColorPicker: true
+  });
+});
+          </script>
+</body>
