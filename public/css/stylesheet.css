@@ -50,7 +50,7 @@ form input {
   width: 300px;
 }
 
-form button { 
+#chatsendbutton { 
   width: 9%; 
   background: rgb(130, 224, 255); 
   border: none; 

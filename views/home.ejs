@@ -3,8 +3,6 @@
 <script>
      $('#start-chat').on('click', function(e) {
          e.preventDefault();
-         Wix.Activities.getUserSessionToken(function(value) {  
-            window.open('/welcome',"_self")
-         });
+        window.location.replace('/welcome')
       });
 </script>

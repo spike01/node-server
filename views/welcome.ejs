@@ -6,12 +6,10 @@
   
   <script>
         $('#submit-name').on('click', function(e) {
-            e.preventDefault();
             var name = $("#name").val()
-            console.log("hello");
-            Wix.Activities.getUserSessionToken(function(value) {  
-               var chat_url = '/widget/' + value + '?name=' + name
-               window.open(chat_url ,"_self")
-            });
+            console.log("hello"); 
+            var chat_url = '/widget/RANDO?name=' + name
+            window.open(chat_url ,"_self")
+            return false;
          });
   </script>
