@@ -16,7 +16,7 @@ app.use(expressLayouts)
   app.set('view engine', 'ejs');
 
   app.get('/widget/:constant', function(request, response){
-    var text = 'http://localhost:3000/' + request.params.id
+    var text = 'http://wixtextsupport.herokuapp.com/' + request.params.id
       var name = request.query.name;
     response.render('widget', { user: "'"+name+"'", content: name });
   });
@@ -32,7 +32,7 @@ app.get('/home', function(request, response){
 
 app.get('/welcome', function(request, response){
   response.render('welcome');
-  var text = 'http://www.localhost.com/owner'
+  var text = 'http://wixtextsupport.herokuapp.com/owner'
   sendMail();
   sendText(text);
   console.log('GET welcome');
@@ -62,8 +62,8 @@ io.on('connection', function(socket){
 function sendMail(){
   email.sendText('spike01@outlook.com', 'Business owner <spike1602@hotmail.com>',
       'Live customer support request',
-      'Please go to http://textsupport.com/owner to speak directly to your customer',
-      'spike01@outlook.com', {},
+      'Please go to http://wixtextsupport.herokuapp.com/owner/ to speak directly to your customer',
+      'spike01@outlook.com',
       function(err) {
         if (err) console.log('Oh noes: ' + err);
         else     console.log('Oh yays');
