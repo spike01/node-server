@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http)
-//var client = require('twilio')(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
+var client = require('twilio')(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
 var Mailgun = require('mailgun').Mailgun;
 var email = new Mailgun(process.env.MAILGUN_KEY);
 var expressLayouts = require('express-ejs-layouts')
@@ -15,11 +15,11 @@ app.use(expressLayouts)
 
   app.set('view engine', 'ejs');
 
-app.get('/widget/:constant', function(request, response){
-  var text = 'http://localhost:3000/' + request.params.id
-  var name = request.query.name;
-  response.render('widget', { user: "'"+name+"'", content: name });
-});
+  app.get('/widget/:constant', function(request, response){
+    var text = 'http://localhost:3000/' + request.params.id
+      var name = request.query.name;
+    response.render('widget', { user: "'"+name+"'", content: name });
+  });
 
 app.get('/owner', function(request, response){
   response.render('owner');
@@ -32,6 +32,9 @@ app.get('/home', function(request, response){
 
 app.get('/welcome', function(request, response){
   response.render('welcome');
+  var text = 'http://www.localhost.com/owner'
+  sendMail();
+  sendText(text);
   console.log('GET welcome');
 });
 
@@ -66,27 +69,28 @@ function sendMail(){
         else     console.log('Oh yays');
       });
 };
-//function sendText(){
-//client.sendMessage({
+
+function sendText(text){
+  client.sendMessage({
 
 
 
-//to:'+447889072164', // Any number Twilio can deliver to
-//from: '+441773252038', // A number you bought from Twilio and can use for outbound communication
-//body: 'yo'  // body of the SMS message
+    to:'+447889072164', // Any number Twilio can deliver to
+    from: '+441773252038', // A number you bought from Twilio and can use for outbound communication
+    body: text  // body of the SMS message
 
-//}, function(err, responseData) { //this function is executed when a response is received from Twilio
+  }, function(err, responseData) { //this function is executed when a response is received from Twilio
 
-//if (!err) { // "err" is an error received during the request, if any
+    if (!err) { // "err" is an error received during the request, if any
 
-//          "responseData" is a JavaScript object containing data received from Twilio.
-//         A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
-//        http://www.twilio.com/docs/api/rest/sending-sms#example-1
+      //"responseData" is a JavaScript object containing data received from Twilio.
+        //A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
+          //http://www.twilio.com/docs/api/rest/sending-sms#example-1
 
-//console.log(responseData.from); // outputs "+14506667788"
-//console.log(responseData.body); // outputs "word to your mother."
+          console.log(responseData.from); // outputs "+14506667788"
+      console.log(responseData.body); // outputs "word to your mother."
 
-//}
-//});
+    }
+  });
 
-//}
+}
