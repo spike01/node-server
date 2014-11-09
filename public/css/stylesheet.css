@@ -78,3 +78,11 @@ form button {
   background: #D6EFF6;
   margin-left: 8%;
 }
+
+#type-message div {
+  padding: 5px 10px;
+  font-family: Helvetica, sans-serif;
+  font-size: 12px;
+  width: 85%;
+  margin: 2%;
+}

@@ -23,10 +23,11 @@ $(document).ready(function(){
 
   socket.on('message', function(data){
     $('#messages').append($('<div>').text(data.name + ': ' + data.message));
+    $('#type-message').empty()
     userTypingListener();
   });
 
   socket.on('clientTyping', function(message){
-    $('#messages').append($('<div>').text(message));
+    $('#type-message').append($('<div>').text(message));
   });
 });
