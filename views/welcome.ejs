@@ -7,7 +7,7 @@
 
 
   <form action="" id="input_field">
-    <input id="name" placeholder="Please enter your name and hit return!">
+    <input id="name" placeholder="Please enter your name and hit return!" autocomplete='off'>
     <button id="submit-name">Submit</button>
   </form>
   
@@ -20,5 +20,11 @@
           });
           return false;
         });
-  </script>
 
+ $('#x').on('click', function(){
+    $.get('/home', function(data) {
+      $('body').html(data);
+    });
+});
+
+</script>

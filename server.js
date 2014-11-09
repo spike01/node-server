@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 app.get('/widget/:constant', function(request, response){
   var text = 'http://localhost:3000/' + request.params.id
   var name = request.query.name;
-  response.render('widget', { user: "'"+name+"'" });
+  response.render('widget', { user: "'"+name+"'", content: name });
 });
 
 app.get('/owner', function(request, response){

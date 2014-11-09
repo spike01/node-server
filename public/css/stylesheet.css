@@ -20,17 +20,16 @@
   top: 0;
 }
 
-
 #widget_header h3 {
   font: 14px Helvetica;
-  display: inline-block;
+  width: 50%;
 }
 
 #x {
   position: fixed;
   display: inline-block;
-  margin-left: 231px;
-  margin-top: -7px;
+  margin-left: 261px;
+  margin-top: -23px;
   border: 1px solid #DEDEDE;
   padding: 8px;
 }

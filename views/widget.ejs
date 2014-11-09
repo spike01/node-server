@@ -6,7 +6,7 @@ body {
 </style>
 
 <header id="widget_header">
-  <h3>Chat</h3>
+  <h3>Welcome <%= content %>!</h3>
 <link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
   <img src="/images/x.png" id="x" alt="x">
 </header>
@@ -26,3 +26,11 @@ body {
 <script src='/js/socket.js'></script>
 
 
+<script>
+ $('#x').on('click', function(){
+    $.get('/home', function(data) {
+      $('body').html(data);
+    });
+});
+
+</script>
