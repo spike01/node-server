@@ -34,7 +34,7 @@ app.get('/welcome', function(request, response){
   response.render('welcome');
   var text = 'http://wixtextsupport.herokuapp.com/owner'
   sendMail();
-  sendText(text);
+//sendText(text);
   console.log('GET welcome');
 });
 
