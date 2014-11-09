@@ -1,28 +1,52 @@
 <style wix-style>
 #start-chat {
-   background-color: {{style.bgColor #CCCCCA}};
-   transition: background-color 0.7s ease;
+   background-color: #138EC2;
    border: none;
    position: absolute;
-   right: 0px;
+   right: -110px;
    bottom: 25px;
-   height: 3em;
-   width: 80px;
-   border-radius: 10px 0px 0px 10px;
+   height: 60px;
+   width: 175px;
    text-align: left;
+   border-radius: 8px 0px 0px 8px;
 }
 
 #start-chat:hover, #start-chat:focus, #start-chat:active {
-   background-color: white;
+   transition: 0.7s;
+   right: 0px;
 }
 
 body {
    background: none;
 }
+
+#imageleft {
+  display: inline-block;
+  padding: 2px;
+  padding-top: 10px;
+  width: 45px;
+  color: white;
+  vertical-align: top;
+}
+
+#imageright {
+  display: inline-block;
+  padding: 2px;
+  padding-top: 5px;
+  width: 45px;
+  color: white;
+  vertical-align: top;
+}
+
+#robot {
+  display: inline-block;
+}
 </style>
 
-<button id="start-chat">Questions?<br>Chat here!</button>
-
+<button id="start-chat">
+<div id="imageleft">Text Support<br></div>
+<img id="robot" src="images/icon_60x60.jpg" width='50px'>
+<div id="imageright">Click here to chat</div></button>
 <script>
      $('#start-chat').on('click', function(e) {
         $.get('/welcome', function(data) {
