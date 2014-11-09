@@ -14,9 +14,14 @@ app.use(express.static(__dirname + '/public'))
 app.set('view engine', 'ejs');
 
 app.get('/widget/:id', function(request, response){
-  response.render('widget');
+  var name = request.query.name;
+  response.render('widget', { user: "'"+name+"'" });
   console.log(request.query);
   console.log(request.params)
+});
+
+app.get('/owner', function(request, response){
+  response.render('owner');
 });
 
 app.get('/home', function(request, response){
@@ -42,11 +47,11 @@ http.listen(port, function(){
 io.on('connection', function(socket){
 
   socket.on('message', function(message){
-    io.emit('message', {message: message});
+    socket.broadcast.emit('message', message);
   });
 
   socket.on('isTyping', function(message){
-    io.emit('clientTyping', message);
+    socket.broadcast.emit('clientTyping', message);
   });
 });
 

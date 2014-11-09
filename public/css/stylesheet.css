@@ -69,13 +69,13 @@ form input {
   word-wrap: break-word;
 }
 
-#messages div:nth-child(even) { 
-  background: #FFFFFF; 
+#messages div.yours { 
   margin-left: 3%;
+  background: #D6EFF6;
 }
 
-#messages div:nth-child(odd) { 
-  background: #D6EFF6;
+#messages div.mine { 
+  background: #FFFFFF; 
   margin-left: 8%;
 }
 

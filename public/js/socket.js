@@ -4,16 +4,18 @@ $(document).ready(function(){
 
   function userTypingListener() {
     $('#chatmessage').one('keypress', function() {
-      socket.emit('isTyping', "Someone is typing...");
+      socket.emit('isTyping', name + " is typing...");
     });
   };
 
   userTypingListener();
 
   $('form').submit(function() {
-    socket.emit('message', $('#chatmessage').val());
+    socket.emit('message', {name: name, message: $('#chatmessage').val()});
+    $('#messages').append($('<div class="mine">').text(name + ": " + $('#chatmessage').val()));
     scrollDown(window);
     $('#chatmessage').val('');
+    userTypingListener();
     return false;
   });
 
@@ -22,9 +24,8 @@ $(document).ready(function(){
   };
 
   socket.on('message', function(data){
-    $('#messages').append($('<div>').text(data.name + ': ' + data.message));
+    $('#messages').append($('<div class="yours">').text(data.name + ': ' + data.message));
     $('#type-message').empty()
-    userTypingListener();
   });
 
   socket.on('clientTyping', function(message){
