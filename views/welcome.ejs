@@ -6,10 +6,11 @@
   
   <script>
         $('#submit-name').on('click', function(e) {
-            var name = $("#name").val()
-            console.log("hello"); 
-            var chat_url = '/widget/RANDO?name=' + name
-            window.open(chat_url ,"_self")
-            return false;
-         });
+          var name = $("#name").val()
+          var chat_url = '/widget/RANDO?name=' + name
+          $.get(chat_url, function(data) {
+            $('body').html(data);
+          });
+          return false;
+        });
   </script>

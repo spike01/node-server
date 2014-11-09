@@ -1,11 +1,10 @@
 * { 
   margin: 0; 
   padding: 0; 
-  box-sizing: border-box; 
-  background-color: #F6F6F6;
+  box-sizing: border-box;
 }
 
-header {
+#widget_header {
   position: fixed;
   z-index: 10;
   padding: 6px;
@@ -16,7 +15,7 @@ header {
   border: 1px solid #DEDEDE;
 }
 
-header h3 {
+#widget_header h3 {
   font: 14px Helvetica;
   display: inline-block;
 }

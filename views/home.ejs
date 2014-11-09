@@ -1,8 +1,20 @@
+<style wix-style>
+#start-chat {
+  background-color: {{style.bgColor}}
+}
+body {
+  background-color: rgba(255,0,0,0.5);
+  background: none;
+}
+</style>
+
 <button id="start-chat">Chat with us</button>
 
 <script>
      $('#start-chat').on('click', function(e) {
-         e.preventDefault();
-        window.location.replace('/welcome')
+        $.get('/welcome', function(data) {
+          $('body').html(data);
+        });
+        return false;
       });
 </script>

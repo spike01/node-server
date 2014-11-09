@@ -15,12 +15,10 @@ app.use(express.static(__dirname + '/public'))
 
 app.set('view engine', 'ejs');
 
-app.get('/widget/:id', function(request, response){
-  var text = 'http://localhost:3000gi/' + request.params.id
-  sendText(text);
+app.get('/widget/:constant', function(request, response){
+  var text = 'http://localhost:3000/' + request.params.id
   response.render('widget');
-  console.log(request.query);
-  console.log(request.params)
+  console.log(request.params);
   name.customer = request.query.name;
   id = request.params.id;
 });
@@ -57,14 +55,14 @@ io.on('connection', function(socket){
   });
 });
 
-function sendText(text){
+function sendText(){
 		client.sendMessage({
 
 		
 
 	    to:'+447889072164', // Any number Twilio can deliver to
 	    from: '+441773252038', // A number you bought from Twilio and can use for outbound communication
-	    body: text  // body of the SMS message
+	    body: 'yo'  // body of the SMS message
 
 		}, function(err, responseData) { //this function is executed when a response is received from Twilio
 
