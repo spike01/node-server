@@ -1,15 +1,9 @@
-
-<style>
-body {
-  background-color: white;
-}
-</style>
-
-<header id="widget_header">
+<link rel="stylesheet" type="text/css" href="/css/stylesheet-mobile.css">
+<header>
   <h3>Chat</h3>
-<link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
   <img src="/images/x.png" id="x" alt="x">
 </header>
+
 <main class="message_body">
 <section id="messages"></section>
 <section id="type-message"></section>
@@ -22,7 +16,7 @@ body {
   <button id="chatsendbutton">Send</button>
 </form>
 </footer>
-<script>var name = <%- user %></script>
+<script>var name = 'Owner'</script>
 <script src='/socket.io/socket.io.js'></script>
 <script src='/js/socket.js'></script>
 
