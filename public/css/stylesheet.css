@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+#submit-name {
+  display: none;
+}
+
 #widget_header {
   position: fixed;
   z-index: 10;
@@ -13,6 +17,7 @@
   background-color: #F6F6F6;
   height: 30px;
   border: 1px solid #DEDEDE;
+  top: 0;
 }
 
 
@@ -24,7 +29,7 @@
 #x {
   position: fixed;
   display: inline-block;
-  margin-left: 233px;
+  margin-left: 231px;
   margin-top: -7px;
   border: 1px solid #DEDEDE;
   padding: 8px;
@@ -35,7 +40,8 @@
   position: absolute;
   width: 300px;
   display: inline;
-  margin-bottom: 3%;
+  margin-top: 1%;
+  margin-bottom: 13%;
 }
 
 #input_field {
@@ -55,7 +61,7 @@ form input {
   background: rgb(130, 224, 255); 
   border: none; 
   padding: 10px; 
-  visibility: hidden;
+  display: none;
 }
 
 #messages div { 
