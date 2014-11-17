@@ -12,8 +12,6 @@ Proof of concept built by [Ben Tillett](https://github.com/benjamintillett), [Ja
 [Demo video](https://www.youtube.com/watch?v=2CRhji6QQDY)  
 
 Technologies used:
-
-Technologies used:
 - Node.js
 - socket.io
 - HTML5
